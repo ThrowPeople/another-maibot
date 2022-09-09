@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../../static/css/main.css">
+    <title>Plate</title>
+</head>
+<body>
+<div id="app">
+    <div th:each="songItem: ${data}" class="song-item" th:style="${songItem.containerStyle}">
+        <div class="song-property song-level" th:style="${songItem.lightContainerStyle}">
+            <div th:text="${songItem.level}"></div>
+        </div>
+        <div class="song-property song-fc">
+            <div th:style="${songItem.fcStyle}">&nbsp;</div>
+        </div>
+        <div class="song-property song-fs">
+            <div th:style="${songItem.fsStyle}">&nbsp;</div>
+        </div>
+        <div th:text="${songItem.title}" class="song-property song-title"
+             th:style="${songItem.lightContainerStyle}"></div>
+        <div th:text="${songItem.score}" class="song-property song-score"
+             th:style="${songItem.lightContainerStyle}"></div>
+    </div>
+</div>
+</body>
+</html>

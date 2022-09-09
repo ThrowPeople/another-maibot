@@ -1,0 +1,30 @@
+server:
+  port: 9000
+
+spring:
+  web:
+    resources:
+      static-locations: file:static/
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: file:templates/
+    suffix: .html
+  mvc:
+    static-path-pattern: static/**
+    view:
+      suffix: .html
+
+bot:
+  url:
+    node-screen-shot-url: "http://localhost:8083/screenshot"
+    spring-render-plate-list-url: "http://localhost:9000/template/render/plate/list"
+    cq-post-url: "http://localhost:5700/send_msg"
+    df-api-query-plate: "https://www.diving-fish.com/api/maimaidxprober/query/plate"
+    df-api-music-data: "https://www.diving-fish.com/api/maimaidxprober/music_data"
+    static-base: "http://localhost:9000/static"
